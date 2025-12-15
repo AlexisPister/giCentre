@@ -19,7 +19,7 @@ Learn more about the programme and its mission on the Diverse CDT website.
 
 #### November 10, 2025
 
-![giCentre picture at VIS](../assets/news/giCentreAtVis.png)
+![giCentre picture at VIS](/public/news/giCentreAtVis.png)
 
 The giCentre wrapped up a successful week at IEEE VIS 2025 in Vienna, with a strong and inspiring presence across
 papers, posters, and presentations. Our team came back energised by a week of exciting research, discussions, and
