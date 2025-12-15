@@ -1,0 +1,17 @@
+body {
+  font-family: Georgia, serif;
+}
+
+h1, h2 {
+  font-family: system-ui, sans-serif;
+}
+
+h2 {
+  border-bottom: 1px solid #ddd;
+  /*padding-bottom: 0.25rem;*/
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

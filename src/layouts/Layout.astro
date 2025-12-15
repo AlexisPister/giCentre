@@ -1,0 +1,75 @@
+---
+const { title } = Astro.props
+const base = import.meta.env.BASE_URL
+---
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <link rel="stylesheet" href=`${base}/src/global.css` />
+</head>
+<body>
+<header>
+
+</header>
+
+
+<main>
+  <nav>
+    <img id="logo" src=`${base}/src/assets/giCentre.png` />
+
+    <div id="menu">
+      <a href=`${base}`>Home</a>
+      <a href={`${base}/publications`}>Publications</a>
+      <a href=`${base}/projects`>Projects</a>
+      <a href=`${base}/people`>People</a>
+    </div>
+  </nav>
+
+
+  <slot />
+
+  <footer>
+    <p>© giCenter</p>
+  </footer>
+
+
+</main>
+
+
+</body>
+
+<style>
+    main {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 800px;
+        padding: 0 1rem 1rem;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #menu {
+        width: 40%;
+    }
+
+    #menu > a {
+        padding-left: 10px;
+    }
+
+    #logo {
+        max-width: 200px;
+        height: auto;
+    }
+</style>
+
+</html>
