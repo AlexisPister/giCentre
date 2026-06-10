@@ -1,0 +1,11 @@
+# Projects rendered on the /projects page.
+# Each project: name, image (path under public/), description, link.
+- name: giCentre at VIS
+  image: news/giCentreAtVis.png
+  description: Highlights of the giCentre's contributions and presence at the IEEE VIS conference.
+  link: https://www.gicentre.net/
+
+- name: Sample Visualisation Project
+  image: giCentre.png
+  description: A short description of the project, what problem it tackles and the techniques it uses.
+  link: https://example.com

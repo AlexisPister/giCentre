@@ -1,75 +1,109 @@
 ---
-const { title } = Astro.props
-const base = import.meta.env.BASE_URL
+const { title } = Astro.props;
+const base = import.meta.env.BASE_URL;
+
+// Files in public/ are served at the site root (under base); build their URLs from BASE_URL.
+const asset = (path: string) =>
+    `${base.replace(/\/$/, "")}/${path.replace(/^\//, "")}`;
+
+const links = [
+    { href: `${base}`, label: "Home" },
+    { href: `${base}/publications`, label: "Publications" },
+    { href: `${base}/projects`, label: "Projects" },
+    { href: `${base}/people`, label: "People" },
+];
+
+const strip = (p: string) => p.replace(/\/+$/, "") || "/";
+const current = strip(Astro.url.pathname);
+const isActive = (href: string) => {
+    const target = strip(href);
+    return target === strip(base)
+        ? current === target
+        : current.startsWith(target);
+};
 ---
 
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{title}</title>
-  <link rel="stylesheet" href=`/public/global.css` />
-</head>
-<body>
-<header>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{title}</title>
+        <link rel="stylesheet" href={asset("global.css")} />
+    </head>
+    <body>
+        <header></header>
 
-</header>
+        <main>
+            <nav>
+                <img
+                    id="logo"
+                    src={asset("giCentre.png")}
+                    alt="giCentre logo"
+                />
 
+                <div id="menu">
+                    {
+                        links.map((link) => (
+                            <a
+                                href={link.href}
+                                class={
+                                    isActive(link.href) ? "active" : undefined
+                                }
+                                aria-current={
+                                    isActive(link.href) ? "page" : undefined
+                                }
+                            >
+                                {link.label}
+                            </a>
+                        ))
+                    }
+                </div>
+            </nav>
 
-<main>
-  <nav>
-    <img id="logo" src=`public/giCentre.png` />
+            <slot />
 
-    <div id="menu">
-      <a href=`${base}`>Home</a>
-      <a href={`${base}/publications`}>Publications</a>
-      <a href=`${base}/projects`>Projects</a>
-      <a href=`${base}/people`>People</a>
-    </div>
-  </nav>
+            <footer>
+                <p>© giCenter</p>
+            </footer>
+        </main>
+    </body>
 
+    <style>
+        main {
+            margin: 0 auto;
+            width: 100%;
+            max-width: 1000px;
+            padding: 0 1rem 1rem;
+        }
 
-  <slot />
+        nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-  <footer>
-    <p>© giCenter</p>
-  </footer>
+        #menu > a {
+            margin-left: 1rem;
+            color: #555;
+            text-decoration: none;
+            /* reserved so hover/active never shift the text */
+            border-bottom: 2px solid transparent;
+        }
 
+        #menu > a.active {
+            color: #000;
+            border-bottom-color: currentColor;
+        }
 
-</main>
+        #menu > a:hover {
+            color: #000;
+        }
 
-
-</body>
-
-<style>
-    main {
-        margin: 0 auto;
-        width: 100%;
-        max-width: 800px;
-        padding: 0 1rem 1rem;
-    }
-
-    nav {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    #menu {
-        width: 40%;
-    }
-
-    #menu > a {
-        padding-left: 10px;
-    }
-
-    #logo {
-        max-width: 200px;
-        height: auto;
-    }
-</style>
-
+        #logo {
+            max-width: 200px;
+            height: auto;
+        }
+    </style>
 </html>
