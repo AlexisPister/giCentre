@@ -5,12 +5,18 @@ import Layout from "../layouts/Layout.astro";
 
 interface Person {
     name: string;
-    image: string;
+    image?: string;
     bio: string;
     website?: string;
 }
 
-const people = (yaml.load(peopleYaml) ?? []) as Person[];
+interface People {
+    academics: Person[];
+    phd: Person[];
+    alumni: Person[];
+}
+
+const people = (yaml.load(peopleYaml) ?? {}) as People;
 
 const base = import.meta.env.BASE_URL;
 const asset = (path: string) =>
@@ -18,11 +24,10 @@ const asset = (path: string) =>
 ---
 
 <Layout title="People">
-    <h1>People</h1>
-
+    <h2 class="section-title">Academics</h2>
     <ul class="people-list">
         {
-            people.map((person) => (
+            people.academics.map((person) => (
                 <li class="person">
                     {person.image ? (
                         <img
@@ -34,7 +39,7 @@ const asset = (path: string) =>
                         <span class="person-photo person-photo--empty" />
                     )}
                     <div class="person-info">
-                        <h2>
+                        <h3>
                             {person.website ? (
                                 <a
                                     href={person.website}
@@ -46,9 +51,68 @@ const asset = (path: string) =>
                             ) : (
                                 person.name
                             )}
-                        </h2>
+                        </h3>
                         <p>{person.bio}</p>
                     </div>
+                </li>
+            ))
+        }
+    </ul>
+
+    <h2 class="section-title">PhD Students</h2>
+    <ul class="people-list">
+        {
+            people.phd.map((person) => (
+                <li class="person">
+                    {person.image ? (
+                        <img
+                            class="person-photo"
+                            src={asset(person.image)}
+                            alt={person.name}
+                        />
+                    ) : (
+                        <span class="person-photo person-photo--empty" />
+                    )}
+                    <div class="person-info">
+                        <h3>
+                            {person.website ? (
+                                <a
+                                    href={person.website}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    {person.name}
+                                </a>
+                            ) : (
+                                person.name
+                            )}
+                        </h3>
+                        <p>{person.bio}</p>
+                    </div>
+                </li>
+            ))
+        }
+    </ul>
+
+    <h2 class="section-title">Alumni</h2>
+    <ul class="alumni-list">
+        {
+            people.alumni.map((person) => (
+                <li class="alumni">
+                    <h3>
+                        {person.website ? (
+                            <a
+                                href={person.website}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                {person.name}
+                            </a>
+                        ) : (
+                            person.name
+                        )}
+                    </h3>
+                    <p>{person.bio}</p>
                 </li>
             ))
         }
@@ -56,10 +120,15 @@ const asset = (path: string) =>
 </Layout>
 
 <style>
-    .people-list {
+    .section-title {
+        margin-top: 2.5rem;
+    }
+
+    .people-list,
+    .alumni-list {
         list-style: none;
         padding: 0;
-        margin: 2rem 0;
+        margin: 1.5rem 0;
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
@@ -85,22 +154,26 @@ const asset = (path: string) =>
         display: inline-block;
     }
 
-    .person-info h2 {
+    .person-info h3,
+    .alumni h3 {
+        font-family: system-ui, sans-serif;
         font-size: 1.1rem;
         margin: 0 0 0.35rem;
-        border-bottom: none;
     }
 
-    .person-info a {
+    .person-info a,
+    .alumni a {
         color: inherit;
         text-decoration: none;
     }
 
-    .person-info a:hover {
+    .person-info a:hover,
+    .alumni a:hover {
         text-decoration: underline;
     }
 
-    .person-info p {
+    .person-info p,
+    .alumni p {
         margin: 0;
         font-size: 0.95rem;
         color: #555;

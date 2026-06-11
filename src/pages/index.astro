@@ -1,12 +1,32 @@
 ---
-// import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-import News from '../components/News.md';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import News from "../components/News.astro";
 ---
 
-<Layout>
-  <News></News>
+<Layout title="giCentre">
+    <p>
+        The giCentre is a research group specialising in information
+        visualization, visual analytics and the design of novel techniques that
+        help people make sense of complex data.
+    </p>
+    <!-- <p>
+        See our latest <a
+            href={`${import.meta.env.BASE_URL.replace(/\/$/, "")}/news`}>news</a
+        >, explore our <a
+            href={`${import.meta.env.BASE_URL.replace(/\/$/, "")}/projects`}
+            >projects</a
+        >, or meet the <a
+            href={`${import.meta.env.BASE_URL.replace(/\/$/, "")}/people`}
+            >people</a
+        > behind the work.
+    </p> -->
+
+    <p>
+        You can find a record of our publcations <a
+            href="https://openaccess.city.ac.uk/cgi/search/archive/advanced?dataset=archive&screen=Search&_action_search=Search&title_merge=ALL&title=&creators_name_merge=ANY&creators_name=%22dykes%22%3B%22wood%22%3B%22slingsby%22%3B%22jianu%22%3B%22andrienko%22%3B%22andrienko%22%3B%22reyes-aldasoro%22%3B%22giannopoulos%22%3B%22elshehaly%22%3B%22reljan-delaney%22%3B%22mahyar%22%3B%22moghaddam%22%3B%22pister%22%3B%22hutchinson%22%3B%22laksono%22%3B%22crossley%22%3B%22moussavi%22%3B%22arafat%22%3B%22hosseini%22%3B%22myrvoda%22%3B%22nzemeke%22%3B&date=&keywords_merge=ALL&keywords=&divisions_merge=ANY&subjects_merge=ANY&publication_merge=ALL&publication=&documents_merge=ALL&documents=&satisfyall=ALL&order=-date%2Fcreators_name%2Ftitle"
+            >here</a
+        >
+    </p>
+
+    <News />
 </Layout>

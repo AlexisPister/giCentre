@@ -1,5 +1,6 @@
 ---
-const { title } = Astro.props;
+// Markdown pages pass frontmatter under Astro.props.frontmatter; .astro pages pass props directly.
+const { title } = Astro.props.frontmatter ?? Astro.props;
 const base = import.meta.env.BASE_URL;
 
 // Files in public/ are served at the site root (under base); build their URLs from BASE_URL.

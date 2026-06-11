@@ -1,165 +1,210 @@
-# People rendered on the /people page.
+# People rendered on the /people page, grouped by section.
 # Each person: name, image (path under public/), bio, website (optional).
 # Data and photos sourced from https://www.gicentre.net/people
 
-- name: Jason Dykes
-  image: people/jason-dykes.jpg
-  website: http://gicentre.org/jsndyks
-  bio: |
-    Jason Dykes is a Professor of Visualization and director of the giCentre, where he uses techniques from Cartography, Information Visualization, Human Computer Interaction, Computer Science and GIScience to develop novel maps that help generate insights from data and communicate trends.
+academics:
+  - name: Jason Dykes
+    image: people/jason-dykes.jpg
+    website: http://gicentre.org/jsndyks
+    bio: |
+      Jason Dykes is a Professor of Visualization and director of the giCentre, where he uses techniques from Cartography, Information Visualization, Human Computer Interaction, Computer Science and GIScience to develop novel maps that help generate insights from data and communicate trends.
 
-    A former co-chair of the ICA Commission on GeoVisualization and lead editor of Exploring Geovisualization, he has been at the forefront of developments in exploratory interactive cartography for 20 years, his initial ideas embodied in the cartographic data visualizer - cdv - which appears in the Milestones in the History of Thematic Cartography, Statistical Graphics and Data Visualization.
+      A former co-chair of the ICA Commission on GeoVisualization and lead editor of Exploring Geovisualization, he has been at the forefront of developments in exploratory interactive cartography for 20 years, his initial ideas embodied in the cartographic data visualizer - cdv - which appears in the Milestones in the History of Thematic Cartography, Statistical Graphics and Data Visualization.
 
-    Jason has twice acted as papers chair for IEEE Information Visualization (2012-13) and was chair of the 2014 conference in Paris. He has given keynotes at the AutoCarto, GISRUK and GIScience conferences. He was made a National Teaching Fellow of the UK Higher Education Academy in 2005.
+      Jason has twice acted as papers chair for IEEE Information Visualization (2012-13) and was chair of the 2014 conference in Paris. He has given keynotes at the AutoCarto, GISRUK and GIScience conferences. He was made a National Teaching Fellow of the UK Higher Education Academy in 2005.
+  - name: Jo Wood
+    image: people/jo-wood.jpg
+    website: https://www.gicentre.net/jwo/index
+    bio: |
+      Jo Wood is a Professor of Visual Analytics at the giCentre, where he designs, builds and applies data visualization software to analyse patterns in complex datasets. He has particular interests in visualization of spatial data and narrative in visual analytic design.
 
-- name: Jo Wood
-  image: people/jo-wood.jpg
-  website: https://www.gicentre.net/jwo/index
-  bio: |
-    Jo Wood is a Professor of Visual Analytics at the giCentre, where he designs, builds and applies data visualization software to analyse patterns in complex datasets. He has particular interests in visualization of spatial data and narrative in visual analytic design.
+      His background is in Geographic Information Science and terrain analysis, and has, since 1990 been developing new methods and software that bridge the GI Science and Data Visualization domains.
 
-    His background is in Geographic Information Science and terrain analysis, and has, since 1990 been developing new methods and software that bridge the GI Science and Data Visualization domains.
+      His has been a member of the organising and programme committees of a number of international conference series in visualization and geographic information science including IEEE Infovis and VAST, Eurovis, GIScience, Spatial Accuracy and Geomorphometry. He has given keynote talks at a number of venues ranging from GeoComputation to TEDx. He was head of Computer Science at City University between 2015-2018.
+  - name: Aidan Slingsby
+    image: people/aidan-slingsby.jpg
+    website: http://staff.city.ac.uk/~sbbb717/?cont=3
+    bio: |
+      Aidan Slingsby is a Senior Lecturer in Visual and Analytic Computing at the giCentre. He is interested in the design and application of information visualization, particularly for data that are spatial and temporal. His work involves designing, creating and applying information graphics and interactive techniques for exploratory visual analysis. He designs and applies these techniques in a variety of application areas including human and animal movement, demographics, insurance and ecology.
 
-    His has been a member of the organising and programme committees of a number of international conference series in visualization and geographic information science including IEEE Infovis and VAST, Eurovis, GIScience, Spatial Accuracy and Geomorphometry. He has given keynote talks at a number of venues ranging from GeoComputation to TEDx. He was head of Computer Science at City University between 2015-2018.
+      He has a background in Geography and GIS, holding a BSc in Geology (Edinburgh), an MSc in GIS (Edinburgh) and a PhD in GIS (University College London).
+  - name: Radu Jianu
+    image: people/radu-jianu.jpg
+    website: http://www.staff.city.ac.uk/~sbkg566/
+    bio: |
+      Radu Jianu is a Lecturer in Visualization and Visual Analytics at the giCentre where he seeks to understand how people make sense of and learn from digital visual content.  To this end he uses and creates novel methodologies that build on eye-tracking and user-centered experimentation, and works with researchers in other domains to discover how to facilitate novel insights into visual information consumption in practice.
 
-- name: Aidan Slingsby
-  image: people/aidan-slingsby.jpg
-  website: http://staff.city.ac.uk/~sbbb717/?cont=3
-  bio: |
-    Aidan Slingsby is a Senior Lecturer in Visual and Analytic Computing at the giCentre. He is interested in the design and application of information visualization, particularly for data that are spatial and temporal. His work involves designing, creating and applying information graphics and interactive techniques for exploratory visual analysis. He designs and applies these techniques in a variety of application areas including human and animal movement, demographics, insurance and ecology.
+      Radu received a PhD in computer science, with an emphasis on data visualization, from Brown University. Before joining the giCentre, Radu was an assistant professor at Florida International University. Radu publishes regularly in high-impact visualization venues such as InfoVis and Vast, Eurovis, and TVCG.
+  - name: Gennady Andrienko
+    image: people/gennady-andrienko.jpg
+    website: http://geoanalytics.net/and
+    bio: |
+      Gennady Andrienko is a Professor of Visual Analytics at the giCentre. As well as general expertise in visual analytics he has interests in  spatial data mining, multi-criteria decision making and information visualization. He develops new techniques for visual analytic process as well as building visual analytic software to be applied in a range of problem areas.
 
-    He has a background in Geography and GIS, holding a BSc in Geology (Edinburgh), an MSc in GIS (Edinburgh) and a PhD in GIS (University College London).
+      Gennady was the chair of the ICA Commission on Geovisualization (2007-15), is associate editor of Information Visualization (since 2012), IEEE Transactions on Visualization and Computer Graphics (2012-2016), Int J of Cartography (since 2014) and an editorial board member of a number of journals including Cartography and Geographic Information Science, and Steering Committee member of IEEE VAST (since 2016).
+  - name: Natalia Andrienko
+    image: people/natalia-andrienko.jpg
+    website: http://geoanalytics.net/and
+    bio: |
+      Natalia Andrienko is a professor of Visual Analytics at the giCentre. She has interests in the geographic and temporal aspects of visual analytics with expertise geovisualization, giScience and visual data mining. She has developed theoretical models of  spatio-temporal analytics.
 
-- name: Radu Jianu
-  image: people/radu-jianu.jpg
-  website: http://www.staff.city.ac.uk/~sbkg566/
-  bio: |
-    Radu Jianu is a Lecturer in Visualization and Visual Analytics at the giCentre where he seeks to understand how people make sense of and learn from digital visual content.  To this end he uses and creates novel methodologies that build on eye-tracking and user-centered experimentation, and works with researchers in other domains to discover how to facilitate novel insights into visual information consumption in practice.
+      In addition to her extensive journal publications, Natalia is the leading co-author of two significant texts in geospatial analytics - Exploratory Analysis of Spatial and Temporal Data (2006) and Visual Analytics of Movement (2013).
+  - name: Constantino Carlos Reyes-Aldasoro
+    image: people/constantino-carlos-reyes-aldasoro.jpg
+    website: http://www.staff.city.ac.uk/~sbbk034/
+    bio: |
+      Constantino Carlos Reyes-Aldasoro is a Senior Lecturer at the School of Engineering and Mathematical Sciences at City, University of London where he designs software to analyse, interpret and visualise datasets primarily from medical and biomedical experiments.
 
-    Radu received a PhD in computer science, with an emphasis on data visualization, from Brown University. Before joining the giCentre, Radu was an assistant professor at Florida International University. Radu publishes regularly in high-impact visualization venues such as InfoVis and Vast, Eurovis, and TVCG.
+      His background is Electrical Engineering (BEng, Mexico, UNAM, MSc Imperial College) and Computer Science (PhD Warwick).
 
-- name: Gennady Andrienko
-  image: people/gennady-andrienko.jpg
-  website: http://geoanalytics.net/and
-  bio: |
-    Gennady Andrienko is a Professor of Visual Analytics at the giCentre. As well as general expertise in visual analytics he has interests in  spatial data mining, multi-criteria decision making and information visualization. He develops new techniques for visual analytic process as well as building visual analytic software to be applied in a range of problem areas.
+      He is Chair of the IET Vision and Imaging Technical Network, has been member of the Executive Committee of the British Association for Cancer Research and the steering Committee of the Medical Image Understanding and Analysis Conference.
+  - name: Panos Giannopoulos
+    image: people/panos-giannopoulos.jpg
+    website: https://www.city.ac.uk/people/academics/panos-giannopoulos
+    bio: |
+      Panos Giannopoulos is a Lecturer in Algorithms/Computational Geometry at the giCentre. His research interests include geometric optimization, approximation algorithms and fixed-parameter (in)tractability.
 
-    Gennady was the chair of the ICA Commission on Geovisualization (2007-15), is associate editor of Information Visualization (since 2012), IEEE Transactions on Visualization and Computer Graphics (2012-2016), Int J of Cartography (since 2014) and an editorial board member of a number of journals including Cartography and Geographic Information Science, and Steering Committee member of IEEE VAST (since 2016).
+      He holds a Habilitation from Free University of Berlin (Germany), having also received a PhD in Computer Science (Utrecht University, The Netherlands) and MSc in Advanced Computing (Imperial College London, UK).
+  - name: Mai Elshehaly
+    image: people/mai-elshehaly.png
+    website: https://www.city.ac.uk/about/people/academics/mai-elshehaly
+    bio: |
+      Mai Elshehaly is a Lecturer in Visualisation at the giCentre, where she designs, develops and evaluates visual analytics for population health management. She is particularly interested in the role of routine data and lived experience in decision-making.
 
-- name: Natalia Andrienko
-  image: people/natalia-andrienko.jpg
-  website: http://geoanalytics.net/and
-  bio: |
-    Natalia Andrienko is a professor of Visual Analytics at the giCentre. She has interests in the geographic and temporal aspects of visual analytics with expertise geovisualization, giScience and visual data mining. She has developed theoretical models of  spatio-temporal analytics.
+      She is an Honorary Research Fellow at the Wolfson Centre for Applied Health Research, and leads the visualisation stream at the Yorkshire and Humber Patient Safety Research Centre. She has worked closely with colleagues at local authorities and several partner organisations to deliver data literacy to over 30,000 young citizens in Bradford.
 
-    In addition to her extensive journal publications, Natalia is the leading co-author of two significant texts in geospatial analytics - Exploratory Analysis of Spatial and Temporal Data (2006) and Visual Analytics of Movement (2013).
+      Mai received a PhD in Computer Science, focusing on scientific data visualisation, from the Center for Human-Computer Interaction at Virginia Tech. Her postdoctoral  research experience included NSF- and NIHR-funded fellowships at the University of Maryland, Baltimore County and University of Leeds.
+  - name: Mirela Reljan-Delaney
+    image: people/mirela-reljan-delaney.jpg
+    bio: |
+      Mirela Reljan-Delaney is a Lecturer in Computer Science at City and St George's, University of London, Dr Reljan-Delaney specialises in the intersection of participatory visualisation and active travel. With a recently completed PhD in this field, their research explores innovative methods for amplifying underrepresented voices in active travel discourse. They have presented their work internationally, including at conferences in Austria and Mexico, where they contributed to panels examining the intersection of data visualisation, feminism, and power dynamics. Committed to advancing knowledge in their field, they actively engage in academic communities and have participated in committees for prestigious conferences such as STS Conference Graz and CGVC. They are dedicated to bridging technology and humanity in their pedagogical approach and research.
+  - name: Narges Mahyar
+    image: people/narges-mahyar.jpg
+    bio: |
+      Narges Mahyar’s research falls at the intersection of Visualization, HCI, Social Computing, and Design with the goal of augmenting people’s abilities to solve complex problems. She designs, develops, and evaluates novel social computing and visualization techniques that help people (both experts and non-experts) make better decisions. More recently, she has focused on exploring new strategies for scaling and diversifying public engagement in massive decision-making processes related to civic issues.
+  - name: Ali Sarvghad Batn Moghaddam
+    image: people/ali-sarvghad-batn-moghaddam.jpg
+    bio: |
+      Ali Sarvghad Batn Moghaddam’s research investigates novel visualization and interaction techniques for supporting exploratory data analysis and sense-making. He is also interested in the application of advanced visualization and data analysis techniques to solve real-world problems in various fields such as health care and business.
+  - name: Alexis Pister
+    image: people/alexis-pister.jpg
+    bio: |
+      Alexis Pister’s research interests lie in information visualization, visual analytics, and (social) network visualization. He designs and develops interactive systems with new visualization and interaction techniques for the exploration and analysis of complex data. His PhD focused on developing new ways to visualize and analyse historical documents modelled into social networks, with a focus on traceability and explainability. He is now mainly working on new ways to show dynamic hypergraphs.
 
-- name: Constantino Carlos Reyes-Aldasoro
-  image: people/constantino-carlos-reyes-aldasoro.jpg
-  website: http://www.staff.city.ac.uk/~sbbk034/
-  bio: |
-    Constantino Carlos Reyes-Aldasoro is a Senior Lecturer at the School of Engineering and Mathematical Sciences at City, University of London where he designs software to analyse, interpret and visualise datasets primarily from medical and biomedical experiments.
+phd:
+  - name: Maeve Hutchinson
+    image: people/maeve-hutchinson.jpg
+    website: https://maevehutchinson.com/
+    bio: |
+      Maeve Hutchinson is a PhD student researching the use of natural language as an interface for assisting the data analysis and visualisation process. She is under the supervision of Dr. Pranava Madhyastha, Dr. Radu Jianu and Dr. Aidan Slingsby.
+  - name: Dany Laksono
+    image: people/dany-laksono.jpg
+    website: https://www.city.ac.uk/about/people/research-students/dany-laksono
+    bio: |
+      Dany Laksono is a PhD student focusing on geovisualisations and visual analytics of multivariate and temporal geospatial data, in particular with applications in decarbonisation decision-making and planning. Prior to joining the giCentre, he was a researcher and lecturer in Geoinformatics and Geospatial Information Infrastructure Lab, Department of Geodetic and Geomatics Engineering, Universitas Gadjah Mada, Indonesia. His past research covers geospatial data acquisition, analysis and visualisation, including Structure from Motion (SfM) photogrammetry and remote sensing, GIS Analysis, 3D Cadastre, Spatial Data Infrastructure (SDI) and Web-GIS development.
+  - name: Julia Crossley
+    image: people/julia-crossley.png
+    bio: |
+      Julia Crossley is a PhD student in the GI Centre, in the Department of Computer Science. She supervised by Dr Marjahan Begum and Prof Jo Wood. Her research interests are in exploring how abstract Computer Science concepts are processed by CS student, developing models and frameworks for classifying how students move through varying levels of abstraction, and testing these models and frameworks empirically.
+  - name: Laleh Moussavi
+    image: people/laleh-moussavi.jpg
+    bio: |
+      Laleh Moussavi is a PhD student working on detecting behavioural patterns from sequences of spatio-temporal events, using visualisation and machine learning techniques. She works under the supervision of Dr. Aidan Slingsby and Prof. Gennady Andrienko.
+  - name: Youssef Arafat
+    image: people/youssef-arafat.jpg
+    bio: |
+      Youssef Arafat is a PhD student who began his studies in 2021, focusing on applying computer vision and artificial intelligence techniques on cancer data (images). He is supervised by Dr Constantino Carlos Reyes-Aldasoro and Dr Robert Noble.  Youssef received a BEng in Biomedical Engineering in 2019 from City University of London and an MSc in Business Analytics from Warwick Business School (Warwick University) in 2020.
+  - name: Amir Hosseini
+    image: people/amir-hosseini.jpg
+    bio: |
+      Amir Hosseini is a PhD student researching the application of natural language processing and data visualisation for decision-making in population health management. His research focuses on combining expert knowledge and routine data insights to enhance health outcomes.
 
-    His background is Electrical Engineering (BEng, Mexico, UNAM, MSc Imperial College) and Computer Science (PhD Warwick).
+      His PhD is funded by the Engineering and Physical Sciences Research Council (EPSRC) and Bradford Institute for Health Research (BIHR), and he is working under the supervision of Dr. Mai Elshehaly and Prof. Jo Wood. He has a background in Machine Learning, holding a BSc in Computer Science (Artificial Intelligence) and an MSc in Data Science from King’s College London.
+  - name: Sofiia Myrvoda
+    image: people/sofiia-myrvoda.jpg
+    bio: |
+      Sofiia Myrvoda is PhD student researching  narrative visualisations and its usage for improving population health. She is working under the supervision of Dr. Mai Elshehaly and Prof. Jo Wood.
+  - name: Jude Nzemeke
+    image: people/jude-nzemeke.jpg
+    bio: |
+      Jude Nzemeke is a PhD student whose studies focus investigates whether recursion functions as a threshold concept in computer science education and to analyse how its inherent characteristics contribute to the cognitive challenges and transformative learning experiences students encounter as they transition from confusion to a deep understanding of the concept.
 
-    He is Chair of the IET Vision and Imaging Technical Network, has been member of the Executive Committee of the British Association for Cancer Research and the steering Committee of the Medical Image Understanding and Analysis Conference.
+      With a background in database management as an Oracle DBA, programming, and an occasional passion for gaming, his academic journey includes a BSc in Computer Science and an MSc in Systems Security. He is also the Leader of Computer Science and holds a Senior Leadership role at Southend High School for Boys.
 
-- name: Panos Giannopoulos
-  image: people/panos-giannopoulos.jpg
-  website: https://www.city.ac.uk/people/academics/panos-giannopoulos
-  bio: |
-    Panos Giannopoulos is a Lecturer in Algorithms/Computational Geometry at the giCentre. His research interests include geometric optimization, approximation algorithms and fixed-parameter (in)tractability.
+      Jude is dedicated to fostering a dynamic and engaging learning environment for students nationally. His commitment to education and excellence is evident through his recognition in the Excellence in STEM Teacher Award, which highlights his impactful teaching methods and dedication to student success.
 
-    He holds a Habilitation from Free University of Berlin (Germany), having also received a PhD in Computer Science (Utrecht University, The Netherlands) and MSc in Advanced Computing (Imperial College London, UK).
-
-- name: Mai Elshehaly
-  image: people/mai-elshehaly.png
-  website: https://www.city.ac.uk/about/people/academics/mai-elshehaly
-  bio: |
-    Mai Elshehaly is a Lecturer in Visualisation at the giCentre, where she designs, develops and evaluates visual analytics for population health management. She is particularly interested in the role of routine data and lived experience in decision-making.
-
-    She is an Honorary Research Fellow at the Wolfson Centre for Applied Health Research, and leads the visualisation stream at the Yorkshire and Humber Patient Safety Research Centre. She has worked closely with colleagues at local authorities and several partner organisations to deliver data literacy to over 30,000 young citizens in Bradford.
-
-    Mai received a PhD in Computer Science, focusing on scientific data visualisation, from the Center for Human-Computer Interaction at Virginia Tech. Her postdoctoral  research experience included NSF- and NIHR-funded fellowships at the University of Maryland, Baltimore County and University of Leeds.
-
-- name: Mirela Reljan-Delaney
-  image: people/mirela-reljan-delaney.jpg
-  bio: |
-    Mirela Reljan-Delaney is a Lecturer in Computer Science at City and St George's, University of London, Dr Reljan-Delaney specialises in the intersection of participatory visualisation and active travel. With a recently completed PhD in this field, their research explores innovative methods for amplifying underrepresented voices in active travel discourse. They have presented their work internationally, including at conferences in Austria and Mexico, where they contributed to panels examining the intersection of data visualisation, feminism, and power dynamics. Committed to advancing knowledge in their field, they actively engage in academic communities and have participated in committees for prestigious conferences such as STS Conference Graz and CGVC. They are dedicated to bridging technology and humanity in their pedagogical approach and research.
-
-- name: Narges Mahyar
-  image: people/narges-mahyar.jpg
-  bio: |
-    Narges Mahyar’s research falls at the intersection of Visualization, HCI, Social Computing, and Design with the goal of augmenting people’s abilities to solve complex problems. She designs, develops, and evaluates novel social computing and visualization techniques that help people (both experts and non-experts) make better decisions. More recently, she has focused on exploring new strategies for scaling and diversifying public engagement in massive decision-making processes related to civic issues.
-
-- name: Ali Sarvghad Batn Moghaddam
-  image: people/ali-sarvghad-batn-moghaddam.jpg
-  bio: |
-    Ali Sarvghad Batn Moghaddam’s research investigates novel visualization and interaction techniques for supporting exploratory data analysis and sense-making. He is also interested in the application of advanced visualization and data analysis techniques to solve real-world problems in various fields such as health care and business.
-
-- name: Alexis Pister
-  image: people/alexis-pister.jpg
-  bio: |
-    Alexis Pister’s research interests lie in information visualization, visual analytics, and (social) network visualization. He designs and develops interactive systems with new visualization and interaction techniques for the exploration and analysis of complex data. His PhD focused on developing new ways to visualize and analyse historical documents modelled into social networks, with a focus on traceability and explainability. He is now mainly working on new ways to show dynamic hypergraphs.
-
-- name: Maeve Hutchinson
-  image: people/maeve-hutchinson.jpg
-  website: https://maevehutchinson.com/
-  bio: |
-    Maeve Hutchinson is a PhD student researching the use of natural language as an interface for assisting the data analysis and visualisation process. She is under the supervision of Dr. Pranava Madhyastha, Dr. Radu Jianu and Dr. Aidan Slingsby.
-
-- name: Dany Laksono
-  image: people/dany-laksono.jpg
-  website: https://www.city.ac.uk/about/people/research-students/dany-laksono
-  bio: |
-    Dany Laksono is a PhD student focusing on geovisualisations and visual analytics of multivariate and temporal geospatial data, in particular with applications in decarbonisation decision-making and planning. Prior to joining the giCentre, he was a researcher and lecturer in Geoinformatics and Geospatial Information Infrastructure Lab, Department of Geodetic and Geomatics Engineering, Universitas Gadjah Mada, Indonesia. His past research covers geospatial data acquisition, analysis and visualisation, including Structure from Motion (SfM) photogrammetry and remote sensing, GIS Analysis, 3D Cadastre, Spatial Data Infrastructure (SDI) and Web-GIS development.
-
-- name: Julia Crossley
-  image: people/julia-crossley.png
-  bio: |
-    Julia Crossley is a PhD student in the GI Centre, in the Department of Computer Science. She supervised by Dr Marjahan Begum and Prof Jo Wood. Her research interests are in exploring how abstract Computer Science concepts are processed by CS student, developing models and frameworks for classifying how students move through varying levels of abstraction, and testing these models and frameworks empirically.
-
-- name: Laleh Moussavi
-  image: people/laleh-moussavi.jpg
-  bio: |
-    Laleh Moussavi is a PhD student working on detecting behavioural patterns from sequences of spatio-temporal events, using visualisation and machine learning techniques. She works under the supervision of Dr. Aidan Slingsby and Prof. Gennady Andrienko.
-
-- name: Youssef Arafat
-  image: people/youssef-arafat.jpg
-  bio: |
-    Youssef Arafat is a PhD student who began his studies in 2021, focusing on applying computer vision and artificial intelligence techniques on cancer data (images). He is supervised by Dr Constantino Carlos Reyes-Aldasoro and Dr Robert Noble.  Youssef received a BEng in Biomedical Engineering in 2019 from City University of London and an MSc in Business Analytics from Warwick Business School (Warwick University) in 2020.
-
-- name: Amir Hosseini
-  image: people/amir-hosseini.jpg
-  bio: |
-    Amir Hosseini is a PhD student researching the application of natural language processing and data visualisation for decision-making in population health management. His research focuses on combining expert knowledge and routine data insights to enhance health outcomes.
-
-    His PhD is funded by the Engineering and Physical Sciences Research Council (EPSRC) and Bradford Institute for Health Research (BIHR), and he is working under the supervision of Dr. Mai Elshehaly and Prof. Jo Wood. He has a background in Machine Learning, holding a BSc in Computer Science (Artificial Intelligence) and an MSc in Data Science from King’s College London.
-
-- name: Sofiia Myrvoda
-  image: people/sofiia-myrvoda.jpg
-  bio: |
-    Sofiia Myrvoda is PhD student researching  narrative visualisations and its usage for improving population health. She is working under the supervision of Dr. Mai Elshehaly and Prof. Jo Wood.
-
-- name: Jude Nzemeke
-  image: people/jude-nzemeke.jpg
-  bio: |
-    Jude Nzemeke is a PhD student whose studies focus investigates whether recursion functions as a threshold concept in computer science education and to analyse how its inherent characteristics contribute to the cognitive challenges and transformative learning experiences students encounter as they transition from confusion to a deep understanding of the concept.
-
-    With a background in database management as an Oracle DBA, programming, and an occasional passion for gaming, his academic journey includes a BSc in Computer Science and an MSc in Systems Security. He is also the Leader of Computer Science and holds a Senior Leadership role at Southend High School for Boys.
-
-    Jude is dedicated to fostering a dynamic and engaging learning environment for students nationally. His commitment to education and excellence is evident through his recognition in the Excellence in STEM Teacher Award, which highlights his impactful teaching methods and dedication to student success.
-
-- name: Kevin Allain
-  bio: |
-    Kevin Allain was a PhD student who joined in 2017 and completed in 2022. His research interests include study of trajectories, metadata analysis, display of uncertainty and metadata. He has a special interest in investigating merger of context metadata with trajectories predictions within 3D environments.
-
-- name: Cagatay Turkay
-  bio: |
-    Cagatay Turkay was a Lecturer in Applied Data Science at the giCentre. His research mainly focuses on the tight integration of interactive visualizations, data analysis techniques and supporting exploratory knowledge and capabilities of experts. He is no Associate Professor at Warwick University.
-
-- name: Roger Beecham
-  website: http://www.roger-beecham.com/
-  bio: |
-    Roger Beecham's PhD looked at cyclists' behaviour within the London Cycle Hire Scheme, working collaboratively with Transport for London. His subsequent Post Doctoral position applied visual analytics crime analysis as part of the EC-funded VALCRI project.
+alumni:
+  - name: Kevin Allain
+    bio: |
+      Kevin Allain was a PhD student who joined in 2017 and completed in 2022. His research interests include study of trajectories, metadata analysis, display of uncertainty and metadata. He has a special interest in investigating merger of context metadata with trajectories predictions within 3D environments.
+  - name: Cagatay Turkay
+    bio: |
+      Cagatay Turkay was a Lecturer in Applied Data Science at the giCentre. His research mainly focuses on the tight integration of interactive visualizations, data analysis techniques and supporting exploratory knowledge and capabilities of experts. He is no Associate Professor at Warwick University.
+  - name: Roger Beecham
+    website: http://www.roger-beecham.com/
+    bio: |
+      Roger Beecham's PhD looked at cyclists' behaviour within the London Cycle Hire Scheme, working collaboratively with Transport for London. His subsequent Post Doctoral position applied visual analytics crime analysis as part of the EC-funded VALCRI project.
+  - name: Ali Ramathan
+    bio: |
+      Ali Ramathan was a PhD student looking at user perception of spatial treemaps for cartographic layout. He has presented his work at venues including GISRUK and the International Cartographic Association.
+  - name: Sarah Goodwin
+    bio: |
+      Sarah Goodwin completed her PhD in 2015 using geovisualization to inform understanding of domestic energy consumption. She has worked with energy providers and modellers and presented her work at venues including IEEE Infovis and GISRUK.
+  - name: Christos Gatzidis
+    bio: |
+      Christos Gatzidis completed his PhD in 2010 where he was examining the role of non-photorealistic rendering of 3D models for urban navigation. He currently works at the University of Bournemouth as a senior lecturer in Creative Technology.
+  - name: David Lloyd
+    bio: |
+      David Lloyd completed his PhD in 2011 in which he examined human centred interfaces for evidence based policy. He evaluated geovisualization prototypes and their effect on the decision making process.
+  - name: David Mountain
+    bio: |
+      David Mountain gained his PhD in 2005 in which he developed predictive models of movement based on mobile trajectory records. He has since worked as a lecturer in the giCentre and has set up his own GI transport consultancy.
+  - name: Stelios Papakonstantinou
+    bio: |
+      Stelios Papakonstantinou graduated with a PhD in 2011. He used agent technologies mobile location based services to design and develop context-aware services on mobile devices.
+  - name: Johannes Liem
+    bio: |
+      Johannes Liem did his PhD here on investigating the efficacy of geo-spatial flow visualization techniques for digital storytelling. He co-authored and presented previous work at international journals and conferences.
+  - name: Odun Fadahunsi
+    bio: |
+      Odun Fadahunsi was a part-time PhD student whose research interests include Petri nets, Network and Data Science as applied in the context of decision making in Economics, Accounting, Finance and Risk Management domains.
+  - name: Phong Nguyen
+    bio: |
+      Phong Nguyen was a Research Associate at the giCentre. His research mainly focuses on the design and application of interactive visualizations to make sense of complex datasets.
+  - name: Wouter Meulemans
+    bio: |
+      Wouter Meulemans was a Research Fellow here in 2016 under the Marie-Curie fellowship scheme. He is now Assistant Professor at TU Eindhoven, where combines algorithms and computational geometry with visualization.
+  - name: Alex Kachkaev
+    bio: |
+      Alex Kachkaev completed his PhD in 2015 using data from photographic archives to inform pedestrian navigation routing algorithms. He has presented his work at national and international venues including UTSG and IEEE Infovis.
+  - name: Susanne Bleisch
+    bio: |
+      Susanne Bleisch completed her PhD in 2011. Her thesis examined  how effectively abstract data graphics can be integrated with 3D virtual environments. She now works at the University of Melbourne as a research fellow.
+  - name: Ian Greatbatch
+    bio: |
+      Ian Greatbatch completed his PhD in 2009. He was investigating ways in which digital terrain models can be used to assess mountain prominence. He now works as a lecturer in GIS at Kingston University.
+  - name: Cristina Arciniegas Lopez
+    bio: |
+      Cristina Arciniegas Lopez gained her PhD in 2007 in which  she examined co-authorship networks to characterise GI Science communities. She has since worked at the University of Reading as a researcher.
+  - name: Mithileysh Sathiyanarayanan
+    bio: |
+      Mithileysh (Mit) Sathiyanarayanan was a PhD student whose research interests include information visualization, human computer interaction and social informatics.
+  - name: Rafael Henkin
+    bio: |
+      Rafael Henkin was a Research Associate at the giCentre, following his PhD here. His research is focused on the combination of interactive multimodal techniques with ML/AI techniques. He is currently interested in understanding the benefits of the use of interactive visualisations and natural language in AI explainability scenarios.
+  - name: Donia Badawood
+    bio: |
+      Donia Badawood completed her PhD in 2015 examining the way models of narrative construction can be applied to data visualization. She has presented her work a number of venues including IEEE InfoVis and GISRUK
+  - name: Iain Dillingham
+    bio: |
+      Iain Dillingham completed his PhD investigating how visualization can assist understanding spatial uncertainty in crowdsourced crisis information. He has presented his work at IEEE Infovis, GeoViz Hamburg and GISRUK.
+  - name: Naz Khalili-Shavarini
+    bio: |
+      Naz Khalili-Shavarini gained her PhD in 2012 where she developed and evaluated visualization methods for exploring geography of social networks in photo sharing archives. She now works as an analyst for Unisys.
+  - name: Stephanie Marsh
+    bio: |
+      Stephanie Marsh graduated with a PhD in 2008. She performed user-centred evaluations of geovisualization in research and education contexts. She currently works as a UX consultant at Bunnyfoot.
+  - name: Vlasios Voudouris
+    bio: |
+      Vlasios Voudouris completed his PhD in 2008. in which he developed a new object-field model for representing geographic semantics and uncertainty . He is now a lecturer at London Metropolitan University.
 
