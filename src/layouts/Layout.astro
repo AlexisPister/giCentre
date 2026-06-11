@@ -9,7 +9,6 @@ const asset = (path: string) =>
 
 const links = [
     { href: `${base}`, label: "Home" },
-    { href: `${base}/publications`, label: "Publications" },
     { href: `${base}/projects`, label: "Projects" },
     { href: `${base}/people`, label: "People" },
 ];
@@ -22,6 +21,57 @@ const isActive = (href: string) => {
         ? current === target
         : current.startsWith(target);
 };
+
+// --- Decorative storyline background ---------------------------------------
+// Each row is one "character" line; values are vertical positions (0–1) across
+// equally spaced time steps. Shared values make lines converge, like a
+// storyline visualisation. Smoothed into curves with a Catmull-Rom spline.
+const STORY_W = 1440;
+const STORY_H = 900;
+const storyColors = [
+    "#e4572e",
+    "#1a936f",
+    "#f3a712",
+    "#3d5a80",
+    "#8e44ad",
+    "#2e86ab",
+    "#c1121f",
+    "#577590",
+];
+// Lines keep a loose lane but wander and cross a little, with a few
+// convergence events — storyline-like, with a touch of randomness.
+const storyTracks = [
+    [0.15, 0.22, 0.34, 0.4, 0.3, 0.2, 0.16],
+    [0.27, 0.25, 0.38, 0.42, 0.36, 0.3, 0.28],
+    [0.38, 0.42, 0.45, 0.4, 0.44, 0.41, 0.38],
+    [0.47, 0.44, 0.42, 0.48, 0.5, 0.46, 0.49],
+    [0.56, 0.6, 0.58, 0.52, 0.55, 0.6, 0.57],
+    [0.65, 0.62, 0.66, 0.68, 0.6, 0.64, 0.66],
+    [0.74, 0.72, 0.7, 0.74, 0.68, 0.76, 0.73],
+    [0.85, 0.82, 0.78, 0.82, 0.88, 0.8, 0.84],
+];
+
+const smooth = (track: number[]) => {
+    const pts = track.map((v, i) => ({
+        x: (STORY_W * i) / (track.length - 1),
+        y: v * STORY_H,
+    }));
+    let d = `M ${pts[0].x} ${pts[0].y}`;
+    for (let i = 0; i < pts.length - 1; i++) {
+        const p0 = pts[i - 1] ?? pts[i];
+        const p1 = pts[i];
+        const p2 = pts[i + 1];
+        const p3 = pts[i + 2] ?? p2;
+        const c1x = p1.x + (p2.x - p0.x) / 6;
+        const c1y = p1.y + (p2.y - p0.y) / 6;
+        const c2x = p2.x - (p3.x - p1.x) / 6;
+        const c2y = p2.y - (p3.y - p1.y) / 6;
+        d += ` C ${c1x} ${c1y} ${c2x} ${c2y} ${p2.x} ${p2.y}`;
+    }
+    return d;
+};
+
+const storyPaths = storyTracks.map((t) => smooth(t));
 ---
 
 <!doctype html>
@@ -33,6 +83,15 @@ const isActive = (href: string) => {
         <link rel="stylesheet" href={asset("global.css")} />
     </head>
     <body>
+        <!-- <svg
+            class="bg-storyline"
+            viewBox={`0 0 ${STORY_W} ${STORY_H}`}
+            preserveAspectRatio="xMidYMid slice"
+            aria-hidden="true"
+        >
+            {storyPaths.map((d, i) => <path d={d} stroke={storyColors[i]} />)}
+        </svg> -->
+
         <header></header>
 
         <main>
@@ -71,11 +130,30 @@ const isActive = (href: string) => {
     </body>
 
     <style>
+        .bg-storyline {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            opacity: 0.3;
+        }
+
+        .bg-storyline path {
+            fill: none;
+            stroke-width: 4;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
         main {
+            position: relative;
             margin: 0 auto;
             width: 100%;
             max-width: 1000px;
             padding: 0 1rem 1rem;
+            font-family: system-ui;
         }
 
         nav {
