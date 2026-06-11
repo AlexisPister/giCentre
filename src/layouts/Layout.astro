@@ -152,15 +152,16 @@ const storyPaths = storyTracks.map((t) => smooth(t));
             margin: 0 auto;
             width: 100%;
             max-width: 1000px;
-            padding: 0 1rem 1rem;
+            padding: 1rem 1rem;
             font-family: system-ui;
+            font-size: 1.1rem;
         }
 
         nav {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-end;
         }
 
         #menu > a {
@@ -169,6 +170,7 @@ const storyPaths = storyTracks.map((t) => smooth(t));
             text-decoration: none;
             /* reserved so hover/active never shift the text */
             border-bottom: 2px solid transparent;
+            font-size: 1.4rem;
         }
 
         #menu > a.active {
@@ -181,7 +183,7 @@ const storyPaths = storyTracks.map((t) => smooth(t));
         }
 
         #logo {
-            max-width: 200px;
+            max-width: 260px;
             height: auto;
         }
     </style>
