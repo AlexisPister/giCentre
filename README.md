@@ -1,46 +1,74 @@
-# Astro Starter Kit: Basics
+# giCentre website
 
-```sh
-npm create astro@latest -- --template basics
-```
+A small [Astro](https://astro.build) static site for the giCentre research group. Most
+content (news, projects, people) is driven by YAML data files so it can be edited without
+touching the page code.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+## Project structure
 
 ```text
 /
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
+├── public/                  # Static assets served as-is at the site root
+│   ├── giCentre.png         # Logo
+│   ├── global.css           # Global styles
+│   ├── news/                # News images
+│   └── people/              # People photos
+├── src/
+│   ├── layouts/
+│   │   └── Layout.astro     # Shared shell: <head>, nav, footer, background
+│   ├── components/
+│   │   └── News.astro       # Renders news.yaml (markdown via markdown-it)
+│   ├── pages/               # One file per route
+│   │   ├── index.astro      # Home (intro + News)
+│   │   ├── projects.astro   # Renders projects.yaml as a grid
+│   │   └── people.astro     # Renders person.yaml (academics / PhD / alumni)
+│   ├── news.yaml            # News items: title, date, imgs, content (markdown)
+│   ├── projects.yaml        # Projects: name, image, description, link
+│   └── person.yaml          # People, grouped into academics / phd / alumni
+├── astro.config.ts          # site + base config (see Deployment)
 └── package.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+### Editing content
 
-## 🧞 Commands
+- **News** — add an entry to `src/news.yaml` (`content` is markdown; `imgs` are paths under `public/`).
+- **Projects** — add an entry to `src/projects.yaml`.
+- **People** — add an entry under `academics`, `phd`, or `alumni` in `src/person.yaml`; put photos in `public/people/`.
 
-All commands are run from the root of the project, from a terminal:
+No code changes are needed for content updates.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Commands
 
-## 👀 Want to learn more?
+Run from the project root:
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+| Command           | Action                                       |
+| :---------------- | :------------------------------------------- |
+| `npm install`     | Install dependencies                         |
+| `npm run dev`     | Start the dev server at `localhost:4321`     |
+| `npm run build`   | Build the production site to `./dist/`       |
+| `npm run preview` | Preview the production build locally         |
+
+## Deployment
+
+The site deploys to **GitHub Pages** automatically via the
+[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) workflow: every push to
+`main` builds the site with [`withastro/action`](https://github.com/withastro/action) and
+publishes `./dist/` to Pages. You can also trigger it manually from the repository's
+**Actions** tab ("Run workflow").
+
+One-time setup: in the repository settings, set **Settings → Pages → Build and deployment →
+Source** to **GitHub Actions**.
+
+### Important: `base` and `site`
+
+The site is served from a project subpath, so `astro.config.ts` sets:
+
+```js
+site: 'https://alexispister.github.io/',
+base: '/giCentre',
+```
+
+Because of `base`, always build URLs to public assets and internal links from
+`import.meta.env.BASE_URL` (the layout/pages already do this) rather than hardcoding `/`.
+If the repository name or owner changes, update `site` and `base` to match, or the
+deployed asset and link paths will break.
