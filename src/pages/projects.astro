@@ -67,6 +67,11 @@ const asset = (path: string) =>
         text-decoration: none;
     }
 
+    /* Whole card is the link, so don't underline its text on hover. */
+    .project-card a:hover {
+        text-decoration: none;
+    }
+
     .project-card img {
         width: 100%;
         aspect-ratio: 16 / 9;
