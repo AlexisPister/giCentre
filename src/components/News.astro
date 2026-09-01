@@ -7,6 +7,7 @@ interface NewsItem {
     title: string;
     date: string;
     imgs?: string[];
+    preview?: string;
     content: string;
 }
 
@@ -15,9 +16,18 @@ interface Props {
     limit?: number;
     // Add a link through to the full news page.
     moreLink?: boolean;
+    // Show images as small thumbnails beside the text rather than full width.
+    thumbnails?: boolean;
+    // Show each item's short `preview` line instead of its full content.
+    preview?: boolean;
 }
 
-const { limit, moreLink = false } = Astro.props;
+const {
+    limit,
+    moreLink = false,
+    thumbnails = false,
+    preview = false,
+} = Astro.props;
 
 // Newest first, so the yaml file can stay in whatever order is convenient.
 const all = ((yaml.load(newsYaml) ?? []) as NewsItem[]).sort(
@@ -31,6 +41,15 @@ const base = import.meta.env.BASE_URL;
 const asset = (path: string) =>
     `${base.replace(/\/$/, "")}/${path.replace(/^\//, "")}`;
 
+// Items should carry their own `preview`; fall back to the opening paragraph of
+// the body so a missing one degrades to something readable rather than a blank.
+const previewText = (item: NewsItem) =>
+    item.preview ??
+    item.content
+        .split(/\n\s*\n/)[0]
+        .replace(/\s+/g, " ")
+        .trim();
+
 const formatDate = (date: string) =>
     new Date(date).toLocaleDateString("en-GB", {
         day: "numeric",
@@ -39,18 +58,38 @@ const formatDate = (date: string) =>
     });
 ---
 
-<section class="news">
+<section class:list={["news", { thumbnails }]}>
     {
-        items.map((item) => (
-            <article>
-                <h3>{item.title}</h3>
-                <p class="date">{formatDate(item.date)}</p>
-                {(item.imgs ?? []).map((img) => (
-                    <img src={asset(img)} alt={item.title} />
-                ))}
-                <div class="content" set:html={md.render(item.content)} />
-            </article>
-        ))
+        items.map((item) => {
+            const imgs = item.imgs ?? [];
+            return (
+                <article>
+                    {thumbnails && imgs.length > 0 && (
+                        <div class="thumbs">
+                            {imgs.map((img) => (
+                                <img src={asset(img)} alt={item.title} />
+                            ))}
+                        </div>
+                    )}
+                    <div class="body">
+                        <h3>{item.title}</h3>
+                        <p class="date">{formatDate(item.date)}</p>
+                        {!thumbnails &&
+                            imgs.map((img) => (
+                                <img src={asset(img)} alt={item.title} />
+                            ))}
+                        {preview ? (
+                            <p class="preview">{previewText(item)}</p>
+                        ) : (
+                            <div
+                                class="content"
+                                set:html={md.render(item.content)}
+                            />
+                        )}
+                    </div>
+                </article>
+            );
+        })
     }
 
     {
@@ -74,6 +113,7 @@ const formatDate = (date: string) =>
 
     .news h3 {
         margin-bottom: 0.25rem;
+        margin-top: 0px;
     }
 
     .news .date {
@@ -86,6 +126,49 @@ const formatDate = (date: string) =>
         display: block;
         margin: 0 0 1rem;
         border-radius: 4px;
+    }
+
+    /* Thumbnail mode: image column beside the text. */
+    .news.thumbnails article {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.25rem;
+    }
+
+    /* Without this the text column refuses to shrink below its content. */
+    .news .body {
+        min-width: 0;
+    }
+
+    .news .thumbs {
+        flex: 0 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .news .thumbs img {
+        width: 140px;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        margin: 0;
+    }
+
+    /* Too narrow for two columns: put the thumbnail back above the text. */
+    @media (max-width: 560px) {
+        .news.thumbnails article {
+            display: block;
+        }
+
+        .news .thumbs {
+            margin-bottom: 1rem;
+        }
+    }
+
+    .news .preview {
+        margin: 0;
+        font-size: 0.9rem;
+        color: #555;
     }
 
     .news .more {

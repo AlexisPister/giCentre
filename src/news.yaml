@@ -1,9 +1,14 @@
-# News items rendered by the News component on the home page.
-# Each item: title, date (YYYY-MM-DD), imgs (list of paths under public/), content (markdown).
+# News items rendered by the News component: in full on the news page, and as
+# short previews on the home page.
+# Each item: title, date (YYYY-MM-DD), imgs (list of paths under public/),
+# preview (one-line summary shown on the home page), content (markdown).
 
 - title: CDT Launch
   date: 2025-11-04
   imgs: []
+  preview: >
+    The Diverse CDT has welcomed its first cohort of 11 students — the first Centre for Doctoral Training led by
+    City St George's, in partnership with the University of Warwick.
   content: |
     The Centre for Doctoral Training in Diversity in Data Visualisation (Diverse CDT) has welcomed its first cohort of 11
     students, marking a major step in advancing diversity and innovation in data-driven research.
@@ -23,6 +28,9 @@
   date: 2025-11-10
   imgs:
     - news/giCentreAtVis.png
+  preview: >
+    A week of papers, posters and presentations at IEEE VIS 2025 in Vienna, including Best Paper honours for Amir at
+    the Workshop on Visual Analytics in Healthcare.
   content: |
     The giCentre wrapped up a successful week at IEEE VIS 2025 in Vienna, with a strong and inspiring presence across
     papers, posters, and presentations. Our team came back energised by a week of exciting research, discussions, and
