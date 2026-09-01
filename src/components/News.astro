@@ -10,7 +10,20 @@ interface NewsItem {
     content: string;
 }
 
-const items = (yaml.load(newsYaml) ?? []) as NewsItem[];
+interface Props {
+    // Show only the most recent `limit` items; omit to show them all.
+    limit?: number;
+    // Add a link through to the full news page.
+    moreLink?: boolean;
+}
+
+const { limit, moreLink = false } = Astro.props;
+
+// Newest first, so the yaml file can stay in whatever order is convenient.
+const all = ((yaml.load(newsYaml) ?? []) as NewsItem[]).sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+);
+const items = limit ? all.slice(0, limit) : all;
 
 const md = new MarkdownIt();
 
@@ -27,8 +40,6 @@ const formatDate = (date: string) =>
 ---
 
 <section class="news">
-    <h2>News</h2>
-
     {
         items.map((item) => (
             <article>
@@ -41,6 +52,14 @@ const formatDate = (date: string) =>
             </article>
         ))
     }
+
+    {
+        moreLink && (
+            <p class="more">
+                <a href={asset("news")}>All news →</a>
+            </p>
+        )
+    }
 </section>
 
 <style>
@@ -48,9 +67,28 @@ const formatDate = (date: string) =>
         margin-bottom: 2.5rem;
     }
 
+    .news article + article {
+        border-top: 1px solid #eee;
+        padding-top: 2rem;
+    }
+
+    .news h3 {
+        margin-bottom: 0.25rem;
+    }
+
     .news .date {
         color: #888;
         font-size: 0.9rem;
         margin: 0 0 1rem;
+    }
+
+    .news img {
+        display: block;
+        margin: 0 0 1rem;
+        border-radius: 4px;
+    }
+
+    .news .more {
+        margin: 0;
     }
 </style>
