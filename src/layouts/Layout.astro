@@ -22,57 +22,6 @@ const isActive = (href: string) => {
         ? current === target
         : current.startsWith(target);
 };
-
-// --- Decorative storyline background ---------------------------------------
-// Each row is one "character" line; values are vertical positions (0–1) across
-// equally spaced time steps. Shared values make lines converge, like a
-// storyline visualisation. Smoothed into curves with a Catmull-Rom spline.
-const STORY_W = 1440;
-const STORY_H = 900;
-const storyColors = [
-    "#e4572e",
-    "#1a936f",
-    "#f3a712",
-    "#3d5a80",
-    "#8e44ad",
-    "#2e86ab",
-    "#c1121f",
-    "#577590",
-];
-// Lines keep a loose lane but wander and cross a little, with a few
-// convergence events — storyline-like, with a touch of randomness.
-const storyTracks = [
-    [0.15, 0.22, 0.34, 0.4, 0.3, 0.2, 0.16],
-    [0.27, 0.25, 0.38, 0.42, 0.36, 0.3, 0.28],
-    [0.38, 0.42, 0.45, 0.4, 0.44, 0.41, 0.38],
-    [0.47, 0.44, 0.42, 0.48, 0.5, 0.46, 0.49],
-    [0.56, 0.6, 0.58, 0.52, 0.55, 0.6, 0.57],
-    [0.65, 0.62, 0.66, 0.68, 0.6, 0.64, 0.66],
-    [0.74, 0.72, 0.7, 0.74, 0.68, 0.76, 0.73],
-    [0.85, 0.82, 0.78, 0.82, 0.88, 0.8, 0.84],
-];
-
-const smooth = (track: number[]) => {
-    const pts = track.map((v, i) => ({
-        x: (STORY_W * i) / (track.length - 1),
-        y: v * STORY_H,
-    }));
-    let d = `M ${pts[0].x} ${pts[0].y}`;
-    for (let i = 0; i < pts.length - 1; i++) {
-        const p0 = pts[i - 1] ?? pts[i];
-        const p1 = pts[i];
-        const p2 = pts[i + 1];
-        const p3 = pts[i + 2] ?? p2;
-        const c1x = p1.x + (p2.x - p0.x) / 6;
-        const c1y = p1.y + (p2.y - p0.y) / 6;
-        const c2x = p2.x - (p3.x - p1.x) / 6;
-        const c2y = p2.y - (p3.y - p1.y) / 6;
-        d += ` C ${c1x} ${c1y} ${c2x} ${c2y} ${p2.x} ${p2.y}`;
-    }
-    return d;
-};
-
-const storyPaths = storyTracks.map((t) => smooth(t));
 ---
 
 <!doctype html>
@@ -196,21 +145,60 @@ const storyPaths = storyTracks.map((t) => smooth(t));
         }
 
         #menu > a {
+            position: relative;
             margin-left: 1rem;
             color: #555;
             text-decoration: none;
             /* reserved so hover/active never shift the text */
-            border-bottom: 2px solid transparent;
+            padding-bottom: 0.3rem;
             font-size: 1.4rem;
+
+            /* A single tapered brush shape: an opaque silhouette (not a
+               stroke) so both ends can thin out to a point. */
+            --brush: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12' preserveAspectRatio='none'%3E%3Cpath fill='black' d='M2 7.4C22 4.4 46 6.6 70 4.8 92 3.2 106 4.4 118 2.6c-10 3.6-22 4.6-46 6-24 1.4-48 1.6-70-1.2Z'/%3E%3C/svg%3E");
         }
 
-        #menu > a.active {
-            color: #000;
-            border-bottom-color: currentColor;
+        /* Painted underline: the brush silhouette masks a block of
+           currentColor, so it always matches the link's own colour. */
+        #menu > a::after {
+            content: "";
+            position: absolute;
+            left: -0.14em;
+            right: -0.2em;
+            bottom: 0;
+            height: 0.46em;
+            background-color: currentColor;
+            -webkit-mask: var(--brush) 0 0 / 100% 100% no-repeat;
+            mask: var(--brush) 0 0 / 100% 100% no-repeat;
+            /* painted on left-to-right, like a single sweep of the brush */
+            clip-path: inset(0 100% 0 0);
+            transition: clip-path 0.25s ease-out;
+            pointer-events: none;
         }
 
+        /* Slight per-item tilt/mirroring so no two strokes look stamped. */
+        #menu > a:nth-child(even)::after {
+            transform: rotate(0.7deg) scaleX(-1);
+        }
+
+        #menu > a:nth-child(odd)::after {
+            transform: rotate(-0.5deg);
+        }
+
+        #menu > a:hover::after,
+        #menu > a.active::after {
+            clip-path: inset(0 0 0 0);
+        }
+
+        #menu > a.active,
         #menu > a:hover {
             color: #000;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            #menu > a::after {
+                transition: none;
+            }
         }
 
         #logo {
@@ -236,7 +224,6 @@ const storyPaths = storyTracks.map((t) => smooth(t));
 
         .social a {
             color: #555;
-            // text-decoration: none;
             text-decoration: underline;
             font-weight: normal;
         }
