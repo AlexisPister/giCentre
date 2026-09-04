@@ -8,6 +8,8 @@ interface Project {
     image: string;
     description: string;
     link: string;
+    // Optional: names of partner people/organisations on the project.
+    collaborators?: string[];
 }
 
 const projects = (yaml.load(projectsYaml) ?? []) as Project[];
@@ -27,9 +29,20 @@ const asset = (path: string) =>
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <img src={asset(project.image)} alt={project.name} />
-                        <h2>{project.name}</h2>
-                        <p>{project.description}</p>
+                        <img
+                            src={`projects/${project.image}`}
+                            alt={project.name}
+                        />
+                        <div class="card-body">
+                            <h2>{project.name}</h2>
+                            <p>{project.description}</p>
+                            {(project.collaborators?.length ?? 0) > 0 && (
+                                <p class="collaborators">
+                                    <span>Collaborators:</span>{" "}
+                                    {project.collaborators?.join(", ")}
+                                </p>
+                            )}
+                        </div>
                     </a>
                 </li>
             ))
@@ -79,15 +92,34 @@ const asset = (path: string) =>
         display: block;
     }
 
+    /* Holds the padding and spacing so an optional collaborators line can be
+       added without the margins of its neighbours needing to change. */
+    .card-body {
+        padding: 0.75rem 1rem 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
     .project-card h2 {
         font-size: 1.1rem;
-        margin: 0.75rem 1rem 0.25rem;
+        margin: 0;
         border-bottom: none;
     }
 
     .project-card p {
-        margin: 0 1rem 1rem;
+        margin: 0;
         font-size: 0.9rem;
         color: #555;
+    }
+
+    .collaborators {
+        font-size: 0.8rem;
+        color: #777;
+    }
+
+    .collaborators span {
+        color: #555;
+        font-weight: bold;
     }
 </style>
