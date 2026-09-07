@@ -3,8 +3,8 @@
 # Optional: collaborators, a list of partner people or organisations.
 - name: UK Cobenefit Atlas
   image: ukcobenefits.png
-  description: A short description of the project, what problem it tackles and the techniques it uses.
-  link: https://example.com
+  description: The Atlas is a resource that reveals how, when, and for whom benefits emerge, uncovering connections across social, economic, and environmental priorities to guide more informed and effective decisions.
+  link: https://ukcobenefitsatlas.net/
   collaborators:
       - University of Edinburgh
 
