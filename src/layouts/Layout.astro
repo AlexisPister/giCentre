@@ -46,11 +46,13 @@ const isActive = (href: string) => {
 
         <main>
             <nav>
-                <img
-                    id="logo"
-                    src={asset("giCentre.png")}
-                    alt="giCentre logo"
-                />
+                <a href={base} id="logo-link" aria-label="Home">
+                    <img
+                        id="logo"
+                        src={asset("giCentre.png")}
+                        alt="giCentre logo"
+                    />
+                </a>
 
                 <div id="menu">
                     {
@@ -199,6 +201,13 @@ const isActive = (href: string) => {
             #menu > a::after {
                 transition: none;
             }
+        }
+
+        /* block, so the inline descender gap doesn't offset the logo from the
+           bottom-aligned menu next to it */
+        #logo-link {
+            display: block;
+            text-decoration: none;
         }
 
         #logo {
