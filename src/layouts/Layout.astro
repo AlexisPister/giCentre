@@ -56,21 +56,17 @@ const isActive = (href: string) => {
                 </a>
 
                 <div id="menu">
-                    {
-                        links.map((link) => (
-                            <a
-                                href={link.href}
-                                class={
-                                    isActive(link.href) ? "active" : undefined
-                                }
-                                aria-current={
-                                    isActive(link.href) ? "page" : undefined
-                                }
-                            >
-                                {link.label}
-                            </a>
-                        ))
-                    }
+                    {links.map((link) => (
+                        <a
+                            href={link.href}
+                            class={isActive(link.href) ? "active" : undefined}
+                            aria-current={
+                                isActive(link.href) ? "page" : undefined
+                            }
+                        >
+                            {link.label}
+                        </a>
+                    ))}
                 </div>
             </nav>
 
@@ -89,22 +85,28 @@ const isActive = (href: string) => {
                         <a
                             href="https://bsky.app/profile/gicentre.bsky.social"
                             target="_blank"
-                            rel="noopener noreferrer">Bluesky</a
+                            rel="noopener noreferrer"
                         >
+                            Bluesky
+                        </a>
                     </li>
                     <li>
                         <a
                             href="https://diverse-cdt.ac.uk/"
                             target="_blank"
-                            rel="noopener noreferrer">Diverse CDT</a
+                            rel="noopener noreferrer"
                         >
+                            Diverse CDT
+                        </a>
                     </li>
                     <li>
                         <a
                             href="https://www.citystgeorges.ac.uk/"
                             target="_blank"
-                            rel="noopener noreferrer">City St George's</a
+                            rel="noopener noreferrer"
                         >
+                            City St George's
+                        </a>
                     </li>
                 </ul>
             </footer>
@@ -144,7 +146,7 @@ const isActive = (href: string) => {
             flex-direction: row;
             justify-content: space-between;
             align-items: flex-end;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
         }
 
         #menu > a {
