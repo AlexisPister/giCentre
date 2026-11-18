@@ -146,7 +146,7 @@ const isActive = (href: string) => {
             flex-direction: row;
             justify-content: space-between;
             align-items: flex-end;
-            margin-bottom: 2rem;
+            margin-bottom: 2.8rem;
         }
 
         #menu > a {
@@ -207,15 +207,22 @@ const isActive = (href: string) => {
         }
 
         #logo {
-            max-width: 260px;
+            max-width: 299px;
             height: auto;
+            /* sit slightly lower than the menu's baseline (30% of its own height) */
+            transform: translateY(30%);
         }
 
+        /* Full-width teal band: the content stays aligned with the page
+           column, while a huge box-shadow paints the colour out to both
+           screen edges and down past the bottom of the page. */
         footer {
             margin-top: 3rem;
-            padding-top: 1rem;
-            border-top: 1px solid #ddd;
-            color: #888;
+            padding: 1.25rem 0;
+            background-color: #1f7f7b;
+            box-shadow: 0 0 0 100vmax #1f7f7b;
+            clip-path: inset(0 -100vmax -100vmax);
+            color: #fff;
             font-size: 0.9rem;
         }
 
@@ -228,14 +235,14 @@ const isActive = (href: string) => {
         }
 
         .social a {
-            color: #555;
-            text-decoration: underline;
+            color: #fff;
             font-weight: normal;
+            text-decoration-color: rgba(255, 255, 255, 0.6);
         }
 
         .social a:hover {
-            color: #000;
-            text-decoration: underline;
+            color: #fff;
+            text-decoration-color: #fff;
         }
     </style>
 </html>
