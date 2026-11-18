@@ -62,6 +62,148 @@
   imgs:
     - news/dany-phd.jpeg
   preview: >
-    Congratulations to Dany Laksono for passing his PhD Viva! His thesis entitled Visual Analytics to Support Data-Driven Decision-Making in Energy Networks was supervised by Radu Jianu and [Aidan Slingsby](https://www.staff.city.ac.uk/~sbbb717/). 
+    Congratulations to Dany Laksono for passing his PhD Viva! His thesis entitled Visual Analytics to Support Data-Driven Decision-Making in Energy Networks was supervised by Radu Jianu and [Aidan Slingsby](https://www.staff.city.ac.uk/~sbbb717/).
   content: |
     Congratulations to Dany Laksono for passing his PhD Viva! His thesis entitled Visual Analytics to Support Data-Driven Decision-Making in Energy Networks was supervised by Radu Jianu and me. He's written some papers and his thesis will follow. Thanks to Urska Demsar and Ali Sarvghad for examining it, Esther Mondragón for chairing it, and Advanced Infrastructure for sponsoring it and helping keep it relevant!
+
+- title: "2025: A standout year for the giCentre!"
+  date: 2025-12-26
+  imgs: []
+  preview: >
+    2025 has been one of our best years yet: three new colleagues, the launch of the Diverse CDT, 25+ papers, two
+    graduations and three new grants.
+  content: |
+    2025 has been an exceptionally strong year for the giCentre — quite possibly one of our best yet.
+
+    We were delighted to welcome three new colleagues to the team: **Narges, Ali, and Alexis**, whose expertise and
+    energy have already made a real impact.
+
+    This year also marked the official launch of the **Centre for Doctoral Training in Diversity in Data Visualisation
+    (CDT)**. The first cohort of students has arrived, and the programme is now fully up and running. This has been made
+    possible by the outstanding work of **Jason and Jo**, who have led the CDT from vision to reality. You can read more
+    about it here: [https://diverse-cdt.ac.uk/](https://diverse-cdt.ac.uk/)
+
+    On the research front, we published **more than 25 papers**, celebrated the graduation of **two students**, and
+    secured **three new grants** — achievements that reflect the strength and breadth of our work.
+
+    We also had a strong presence at **IEEE VIS 2025**, showcasing our research and engaging with the wider
+    visualisation community.
+
+    All in all, 2025 has been an outstanding year for the giCentre, and we’re excited about what lies ahead.
+
+- title: "Fully-funded PhD: predicting and mapping damp and mould in English housing"
+  date: 2025-12-15
+  imgs: []
+  preview: >
+    Fully-funded PhD on predicting and mapping damp and mould in English housing to estimate impacts on hospital
+    admissions, jointly supervised with LSHTM. Deadline 14th January.
+  content: |
+    We have a fully-funded\* PhD position on "predicting and mapping damp and mould in English housing to estimate
+    impacts on hospital admissions for pneumonia and severe asthma" with a supervision team from both City St George's
+    and the London School of Hygiene & Tropical Medicine.
+
+    See [here for more details](https://mrc-lid.lshtm.ac.uk/2026-27-project-slingsby-bidulka-clark/). This position
+    would suit someone with knowledge and interests in GIS, data science, public health and statistical modelling.
+
+    You will need to write a proposal but contact [Aidan Slingsby](mailto:a.slingsby@city.ac.uk), Sierra Clark and/or
+    Patrick Bidulka to chat about this. The application deadline is 14th January.
+
+    \*Includes a tax-free stipend of around £22K per year, but only UK fees are funded so overseas applicants would need
+    to find funding for the fee difference.
+
+- title: Welcome to Our New giCentre Colleagues
+  date: 2025-11-04
+  imgs:
+    - news/new-colleagues.jpg
+  preview: >
+    We welcome three new researchers to the giCentre: Narges Mahyar, Alexis Pister and Ali Sarvghad Batn Moghaddam.
+  content: |
+    We are pleased to welcome three new researchers to the giCentre, further strengthening our expertise in data
+    visualisation and human-centred analytics.
+
+    **Narges Mahyar**
+    Narges’s work spans visualisation, HCI, social computing, and design, focused on enhancing people's ability to
+    tackle complex problems. She develops and evaluates innovative systems that support better decision-making for
+    experts and the public, with recent research centred on broadening civic participation in large-scale
+    decision-making.
+
+    **Alexis Pister**
+    Alexis specialises in information visualisation, visual analytics, and network visualisation. He designs
+    interactive systems for exploring complex data and has developed methods to visualise historical documents as
+    social networks with an emphasis on traceability and explainability. His current work explores representations for
+    dynamic hypergraphs.
+
+    **Ali Sarvghad Batn Moghaddam**
+    Ali researches visualisation and interaction techniques that support exploratory data analysis and sense-making. He
+    also applies data visualisation approaches in domains such as healthcare and business to help users uncover
+    insights from complex datasets.
+
+- title: Computer Graphics, Visualisation, and Visual Computing (CGVC) will be hosted by giCentre in London this September
+  date: 2024-08-23
+  imgs:
+    - news/cgvc-2024.png
+  preview: >
+    We are hosting CGVC 2024 in London on 12th and 13th September, with keynotes from Petra Isenberg and Rachel
+    McDonnell.
+  content: |
+    We are hosting the 42nd annual conference on
+    [**Computer Graphics, Visualisation, and Visual Computing**](https://cgvc.org.uk/CGVC2024/cfp) (CGVC 2024) in
+    London on **12th and 13th September**.
+
+    Our [programme is available](https://cgvc.org.uk/CGVC2024/programme). We have confirmed **keynotes** from the
+    excellent [**Petra Isenberg**](https://lnkd.in/e3tWpU3F) and
+    [**Rachel McDonnell**](https://www.scss.tcd.ie/Rachel.McDonnell/). We will have a special session on
+    **Human-centred Decision-Making through Data Visualisation**, with talks on cutting-edge EPSRC-funded visualisation
+    research across the UK. We will also have a “Vis in Practice” industry panel. Our social events at the end of the
+    first day will help you connect with others at different career stages in the field of visualisation and visual
+    computing.
+
+    Registration is open. [Please register!](https://cgvc.org.uk/CGVC2024/registration)
+
+- title: Best Reviewer award for EuroVis 2024 for Jo Wood
+  date: 2024-06-11
+  imgs:
+    - news/jo-best-reviewer.jpg
+  preview: >
+    Jo Wood received the EuroVis 2024 Best Reviewer award.
+  content: |
+    Jo Wood was awarded Best Reviewer award for EuroVis 2024 for "strik[ing] an admirable balance between encouragement
+    and constructive criticism" in a way that helps with "nurturing the growth of early-career researchers". Well done!
+
+- title: giCentre at EuroVis
+  date: 2024-06-10
+  imgs:
+    - news/dany-eurovis.jpeg
+  preview: >
+    Dany presented his short paper on gridded-glyphmaps for multi-criteria decision support at EuroVis 2024 in Odense.
+  content: |
+    [Dany](https://www.city.ac.uk/about/people/research-students/dany-laksono) presented his short paper at EuroVis
+    2024 in Odense, Denmark. The work - supervised by
+    [Radu](https://www.city.ac.uk/about/people/academics/radu-jianu) and
+    [Aidan](https://www.city.ac.uk/about/people/academics/aidan-slingsby) and part-funded by AITL - focuses on the use
+    of gridded-glyphmaps for showing multivariate geospatial data used for multi-criteria decision-support.
+    [See the paper here.](https://diglib.eg.org/items/e40356dc-dcf2-4a82-8be9-b1e271619dde)
+
+- title: Hello Mai!
+  date: 2023-04-17
+  imgs:
+    - news/mai-elshehaly.jpg
+    - news/mai-elshehaly-cmv.jpg
+  preview: >
+    We welcome Mai Elshehaly as a Lecturer in Visualisation at the giCentre.
+  content: |
+    We welcome [Mai Elshehaly](http://invisai.com/mai/) as a Lecturer in Visualisation at the giCentre.
+
+    Mai designs, develops and evaluates visual analytics for population health management with a particular interest
+    in the role of routine data and digital footprints in decision-making.
+
+    An Honorary Senior Research Fellow at the Wolfson Centre for Applied Health Research, Mai leads the visualisation
+    stream at the Yorkshire and Humber Patient Safety Research Centre. She works closely with colleagues at local
+    authorities and several partner organisations to deliver data literacy to over 30,000 young citizens in Bradford.
+
+    Mai received a PhD in Computer Science from the Center for Human-Computer Interaction at Virginia Tech, with a
+    focus on scientific data visualisation. Her postdoctoral research experience included NSF- and NIHR-funded
+    fellowships at the University of Maryland, Baltimore County and University of Leeds.
+
+    Check [Mai’s publications](https://dblp.dagstuhl.de/pid/47/7861.html) to find out more about her exciting work in
+    visualization and public health.
