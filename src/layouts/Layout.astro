@@ -157,37 +157,30 @@ const isActive = (href: string) => {
             /* reserved so hover/active never shift the text */
             padding-bottom: 0.3rem;
             font-size: 1.4rem;
-
-            /* A single tapered brush shape: an opaque silhouette (not a
-               stroke) so both ends can thin out to a point. */
-            --brush: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12' preserveAspectRatio='none'%3E%3Cpath fill='black' d='M2 7.4C22 4.4 46 6.6 70 4.8 92 3.2 106 4.4 118 2.6c-10 3.6-22 4.6-46 6-24 1.4-48 1.6-70-1.2Z'/%3E%3C/svg%3E");
         }
 
-        /* Painted underline: the brush silhouette masks a block of
-           currentColor, so it always matches the link's own colour. */
+        /* Underline: a thick, flat coloured bar, very slightly rotated. */
         #menu > a::after {
             content: "";
             position: absolute;
-            left: -0.14em;
-            right: -0.2em;
-            bottom: 0;
-            height: 0.46em;
-            background-color: currentColor;
-            -webkit-mask: var(--brush) 0 0 / 100% 100% no-repeat;
-            mask: var(--brush) 0 0 / 100% 100% no-repeat;
-            /* painted on left-to-right, like a single sweep of the brush */
+            left: -0.1em;
+            right: -0.1em;
+            bottom: 0.05em;
+            height: 0.28em;
+            background-color: #29a19c;
+            /* drawn left-to-right on hover */
             clip-path: inset(0 100% 0 0);
             transition: clip-path 0.25s ease-out;
             pointer-events: none;
         }
 
-        /* Slight per-item tilt/mirroring so no two strokes look stamped. */
-        #menu > a:nth-child(even)::after {
-            transform: rotate(0.7deg) scaleX(-1);
+        /* A tiny alternating tilt. */
+        #menu > a:nth-child(odd)::after {
+            transform: rotate(-1.5deg);
         }
 
-        #menu > a:nth-child(odd)::after {
-            transform: rotate(-0.5deg);
+        #menu > a:nth-child(even)::after {
+            transform: rotate(1.2deg);
         }
 
         #menu > a:hover::after,
