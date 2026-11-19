@@ -79,7 +79,10 @@ const formatDate = (date: string) =>
                                 <img src={asset(img)} alt={item.title} />
                             ))}
                         {preview ? (
-                            <p class="preview">{previewText(item)}</p>
+                            <p
+                                class="preview"
+                                set:html={md.renderInline(previewText(item))}
+                            />
                         ) : (
                             <div
                                 class="content"
