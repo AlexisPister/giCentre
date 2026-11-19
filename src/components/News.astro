@@ -50,6 +50,16 @@ const previewText = (item: NewsItem) =>
         .replace(/\s+/g, " ")
         .trim();
 
+// Stable anchor for each item on the news page, e.g. "2025-12-26-2025-a-standout-year".
+const slug = (item: NewsItem) =>
+    `${new Date(item.date).toISOString().slice(0, 10)}-${item.title}`
+        .toLowerCase()
+        .normalize("NFKD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "")
+        .slice(0, 80);
+
 const formatDate = (date: string) =>
     new Date(date).toLocaleDateString("en-GB", {
         day: "numeric",
@@ -63,7 +73,7 @@ const formatDate = (date: string) =>
         items.map((item) => {
             const imgs = item.imgs ?? [];
             return (
-                <article>
+                <article id={slug(item)}>
                     {thumbnails && imgs.length > 0 && (
                         <div class="thumbs">
                             {imgs.map((img) => (
@@ -79,10 +89,18 @@ const formatDate = (date: string) =>
                                 <img src={asset(img)} alt={item.title} />
                             ))}
                         {preview ? (
-                            <p
-                                class="preview"
-                                set:html={md.renderInline(previewText(item))}
-                            />
+                            <div class="preview-row">
+                                <p
+                                    class="preview"
+                                    set:html={md.renderInline(previewText(item))}
+                                />
+                                <a
+                                    class="read-more"
+                                    href={`${asset("news")}#${slug(item)}`}
+                                >
+                                    Read more →
+                                </a>
+                            </div>
                         ) : (
                             <div
                                 class="content"
@@ -107,6 +125,8 @@ const formatDate = (date: string) =>
 <style>
     .news article {
         margin-bottom: 2.5rem;
+        /* breathing room when jumped to from a "Read more" link */
+        scroll-margin-top: 1rem;
     }
 
     .news article + article {
@@ -141,6 +161,8 @@ const formatDate = (date: string) =>
     /* Without this the text column refuses to shrink below its content. */
     .news .body {
         min-width: 0;
+        /* fill the row, so every "Read more" lines up at the right edge */
+        flex: 1;
     }
 
     .news .thumbs {
@@ -172,6 +194,28 @@ const formatDate = (date: string) =>
         margin: 0;
         font-size: 0.9rem;
         color: #555;
+    }
+
+    /* Preview text with a small "Read more" link on the line below, at the right. */
+    .news .preview-row {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    .news .read-more {
+        align-self: flex-end;
+        font-size: 0.7rem;
+        font-weight: normal;
+        color: #aaa;
+        text-decoration-color: #ccc;
+        text-decoration-thickness: 1px;
+        white-space: nowrap;
+    }
+
+    .news .read-more:hover {
+        color: #555;
+        text-decoration-color: #555;
     }
 
     .news .more {
